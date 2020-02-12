@@ -60,27 +60,30 @@
     <p id="t7" class="pln"><span class="n"><a href="#t7">7</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t8" class="run"><span class="n"><a href="#t8">8</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_diff_in_seconds_tz</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p id="t9" class="run"><span class="n"><a href="#t9">9</a></span><span class="t">        <span class="nam">user_input</span> <span class="op">=</span> <span class="op">[</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t10" class="pln"><span class="n"><a href="#t10">10</a></span><span class="t">            <span class="num">2</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t10" class="pln"><span class="n"><a href="#t10">10</a></span><span class="t">            <span class="num">3</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p id="t11" class="pln"><span class="n"><a href="#t11">11</a></span><span class="t">            <span class="str">'Sun 10 May 2015 13:54:36 -0700'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p id="t12" class="pln"><span class="n"><a href="#t12">12</a></span><span class="t">            <span class="str">'Sun 10 May 2015 13:54:36 -0000'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p id="t13" class="pln"><span class="n"><a href="#t13">13</a></span><span class="t">            <span class="str">'Sat 02 May 2015 19:54:36 +0530'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t14" class="pln"><span class="n"><a href="#t14">14</a></span><span class="t">            <span class="str">'Fri 01 May 2015 13:54:36 -0000'</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t15" class="pln"><span class="n"><a href="#t15">15</a></span><span class="t">        <span class="op">]</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t16" class="run"><span class="n"><a href="#t16">16</a></span><span class="t">        <span class="nam">expected_result</span> <span class="op">=</span> <span class="op">[</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t17" class="pln"><span class="n"><a href="#t17">17</a></span><span class="t">            <span class="num">25200</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t18" class="pln"><span class="n"><a href="#t18">18</a></span><span class="t">            <span class="num">88200</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t19" class="pln"><span class="n"><a href="#t19">19</a></span><span class="t">        <span class="op">]</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t20" class="run"><span class="n"><a href="#t20">20</a></span><span class="t">        <span class="key">with</span> <span class="nam">patch</span><span class="op">(</span><span class="str">'sys.stdin.readline'</span><span class="op">,</span> <span class="nam">side_effect</span><span class="op">=</span><span class="nam">user_input</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t21" class="run"><span class="n"><a href="#t21">21</a></span><span class="t">            <span class="nam">result</span> <span class="op">=</span> <span class="nam">diff_in_seconds_tz</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t22" class="run"><span class="n"><a href="#t22">22</a></span><span class="t">            <span class="key">for</span> <span class="nam">i</span><span class="op">,</span> <span class="nam">res</span> <span class="key">in</span> <span class="nam">enumerate</span><span class="op">(</span><span class="nam">result</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t23" class="run"><span class="n"><a href="#t23">23</a></span><span class="t">                <span class="nam">self</span><span class="op">.</span><span class="nam">assertEqual</span><span class="op">(</span><span class="nam">res</span><span class="op">,</span> <span class="nam">expected_result</span><span class="op">[</span><span class="nam">i</span><span class="op">]</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t24" class="pln"><span class="n"><a href="#t24">24</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
+    <p id="t14" class="pln"><span class="n"><a href="#t14">14</a></span><span class="t">            <span class="str">'Fri 01 May 2015 13:54:36 -0000'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t15" class="pln"><span class="n"><a href="#t15">15</a></span><span class="t">            <span class="str">'wed 05 Jun 2015 13:54:36 -0900'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t16" class="pln"><span class="n"><a href="#t16">16</a></span><span class="t">            <span class="str">'wed 05 Jun 2015 13:54:36 -0000'</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t17" class="pln"><span class="n"><a href="#t17">17</a></span><span class="t">        <span class="op">]</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t18" class="run"><span class="n"><a href="#t18">18</a></span><span class="t">        <span class="nam">expected_result</span> <span class="op">=</span> <span class="op">[</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t19" class="pln"><span class="n"><a href="#t19">19</a></span><span class="t">            <span class="num">25200</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t20" class="pln"><span class="n"><a href="#t20">20</a></span><span class="t">            <span class="num">88200</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t21" class="pln"><span class="n"><a href="#t21">21</a></span><span class="t">            <span class="num">32400</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t22" class="pln"><span class="n"><a href="#t22">22</a></span><span class="t">        <span class="op">]</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t23" class="run"><span class="n"><a href="#t23">23</a></span><span class="t">        <span class="key">with</span> <span class="nam">patch</span><span class="op">(</span><span class="str">'sys.stdin.readline'</span><span class="op">,</span> <span class="nam">side_effect</span><span class="op">=</span><span class="nam">user_input</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t24" class="run"><span class="n"><a href="#t24">24</a></span><span class="t">            <span class="nam">result</span> <span class="op">=</span> <span class="nam">diff_in_seconds_tz</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t25" class="run"><span class="n"><a href="#t25">25</a></span><span class="t">            <span class="key">for</span> <span class="nam">i</span><span class="op">,</span> <span class="nam">res</span> <span class="key">in</span> <span class="nam">enumerate</span><span class="op">(</span><span class="nam">result</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t26" class="run"><span class="n"><a href="#t26">26</a></span><span class="t">                <span class="nam">self</span><span class="op">.</span><span class="nam">assertEqual</span><span class="op">(</span><span class="nam">res</span><span class="op">,</span> <span class="nam">expected_result</span><span class="op">[</span><span class="nam">i</span><span class="op">]</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t27" class="pln"><span class="n"><a href="#t27">27</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
 </div>
 <div id="footer">
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.0.3</a>,
-            created at 2020-02-12 18:46
+            created at 2020-02-12 21:15
         </p>
     </div>
 </div>
